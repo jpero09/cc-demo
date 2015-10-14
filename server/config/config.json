@@ -1,0 +1,20 @@
+{
+  "app": {
+    "host": "0.0.0.0",
+    "port": 3010,
+    "morganFormat": "tiny"
+  },
+  "Logger": {
+    "console": {
+      "enabled": true, 
+      "level": "info",
+      "pretty": true
+    }
+  },
+  "services": {
+    "timeout": 10000,
+    "futureService": {
+      "url": "http://something.com"
+    }
+  }
+}
