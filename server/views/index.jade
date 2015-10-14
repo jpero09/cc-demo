@@ -19,32 +19,61 @@ html(lang='en', data-ng-app='app')
     link(rel='dns-prefetch', href='//fonts.googleapis.com')
     link(rel='dns-prefetch', href='//maxcdn.bootstrapcdn.com')
 
-    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Open+Sans:400,700')
+    link(rel="stylesheet"  href="//fonts.googleapis.com/css?family=Roboto")
     link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css')
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-    
+
     link(rel='stylesheet', href='/css/style.css')
   body
     .header
-        h1 Here be a header
-    .clearfix    
-    .container-fluid
-      nav.navbar.navbar-dark.bg-inverse
-        button.navbar-toggler.hidden-sm-up(type='button', data-toggle='collapse', data-target="#exCollapsingNavbar")
-          | &#9776;
-        .collapse.navbar-toggleable-xs(id='exCollapsingNavbar')
-          ul.nav.navbar-nav
-            li.active.nav-item
-              a.nav-link(ui-sref='Summary') Summary
-            li.nav-item 
-              a.nav-link(ui-sref='Activity') Activity
-            li.nav-item
-              a.nav-link(ui-sref='Visits') Visits
-            li.nav-item
-              a.nav-link(ui-sref='Physicians') Physicians
-            li.nav-item.invisible
-              a.nav-link(ui-sref='Patients') Patients
-      .container-fluid    
+      .row
+        .col-md-1
+        .col-md-3
+          .input-group
+            input(type="text", placeholder="Search for anything" aria-describedby="mag-ico").form-control
+            span(id="mag-ico").input-group-addon
+              .fa-stack
+                i.fa.fa-circle.fa-stack-2x
+                i.fa.fa-search.fa-stack-1x
+        .col-md-7
+          .pull-right
+            i.fa.fa-th.fa-lg.m-r
+            .fa-stack
+              i.fa.fa-circle.fa-stack-2x
+              i.fa.fa-bell.fa-stack-1x
+        .col-md-1
+      .row
+        .col-md-1
+        .col-md-3
+        .col-md-7
+          nav.navbar
+            button.navbar-toggler.hidden-sm-up(type='button', data-toggle='collapse', data-target="#exCollapsingNavbar")
+              | &#9776;
+            .collapse.navbar-toggleable-xs(id='exCollapsingNavbar')
+              ul.nav.navbar-nav
+                li.active.nav-item
+                  a.nav-link(ui-sref='summary') Summary
+                li.nav-item
+                  a.nav-link(ui-sref='activity') Activity
+                li.nav-item
+                  a.nav-link(ui-sref='visits') Visits
+                li.nav-item
+                  a.nav-link(ui-sref='physicians') Physicians
+                li.nav-item
+                  a.nav-link(ui-sref='patients') Patients
+                li.nav-item
+                  a.nav-link(ui-sref='patients') Complaints
+                li.nav-item
+                  a.nav-link(ui-sref='patients') Diagnoses
+                li.nav-item
+                  a.nav-link(ui-sref='patients') Medications
+                li.nav-item
+                  a.nav-link
+                    span More
+                    i.fa.fa-caret-down.m-l
+          .col-md-1
+    .clearfix
+      .container-fluid
         .row
           .col-sm-12.col-md-12.col-lg-12
             div(data-ui-view='main')
