@@ -30,7 +30,7 @@
       var data = google.visualization.arrayToDataTable(demoVisitData);
       var options = {
         legend: {position: 'none'},
-        hAxis: {gridlines: {color:'#EEE', count: 12}},
+        hAxis: {gridlines: {color: '#EEE', count: 12}},
         vAxis: {minValue: 0, textPosition: 'none', gridlines: {count: 0}}
       };
 
