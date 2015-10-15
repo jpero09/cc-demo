@@ -6,7 +6,7 @@ var path = require('path');
 var plugins = require('gulp-load-plugins')();
 
 var distFolder = './dist';
-var appJSPath = './precompile/app';
+var appJSPath = './precompile/client';
 
 gulp.task('clean', function() {
   del.sync([path.join(__dirname, './dist')], {force: true});
