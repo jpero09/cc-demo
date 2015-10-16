@@ -7,21 +7,28 @@ MockDeptController.prototype.getById = function(req, res) {
     id: req.params.id,
     label: 'Cardiology and Cardiac Surgery',
     building: 'Oxford General Medical Center - Main',
+    location: {
+      longitude: 40.11064,
+      latitude: -83.1514
+    },
     address: {
       street: '7500 Hospital Dr',
       city: 'Dublin',
       state: 'OH',
       zip: '43016'
     },
-    physicians: {
-      total: 75
-    },
-    complaints: {
-      total: 10412
-    },
-    diagnosis: {
-      total: 11109
-    },
+    physicians: 75,
+    complaints: 10412,
+    diagnosis: 11109,
+    visits: 14123
+  };
+
+  res.json(output);
+};
+
+MockDeptController.prototype.getSummary = function(req, res) {
+  var output = {
+    id: req.params.id,
     insurance: {
       providers: [
         {label: 'Insurance', coverage: 98},

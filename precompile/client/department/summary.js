@@ -10,10 +10,10 @@
 
     $scope.init = function() {
       $scope.isLoading = true;
-      $scope.summaryError = null;
+      $scope.error = null;
 
       // Load up some data:
-      Departments.Get({id: '1234543'}, // HACK: This would usually be the id of the dept
+      Departments.Get({id: '1234543', report: 'summary'}, // HACK: This would usually be the id of the dept
         function(data) {
           $scope.isLoading = false;
           $scope.dept = data;
