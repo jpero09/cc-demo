@@ -4,12 +4,12 @@
 
   angular
     .module('app.factories')
-    .factory('SiteSummary', siteSummaryFactory)
+    .factory('Departments', deptFactory)
     ;
 
   /* @ngInject */
-  function siteSummaryFactory($resource) {
-    return $resource('./api/site/:id/summary', {}, {
+  function deptFactory($resource) {
+    return $resource('./api/dept/:id', {}, {
       Get: {method: 'GET', timeout: defaultTimeout}
     });
   }

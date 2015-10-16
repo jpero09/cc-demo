@@ -14,8 +14,8 @@
         url: '/',
         views: {
           main: {
-            templateUrl: 'site/summary/summary',
-            controller: 'siteSummaryController'
+            templateUrl: 'department/summary',
+            controller: 'deptSummaryController'
           }
         }
       })
