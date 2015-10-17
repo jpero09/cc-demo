@@ -6,7 +6,7 @@ module.exports = function home(app, options) {
     '/summary',
     '/activity',
     '/visits',
-    '/physicans',
+    '/physicians',
     '/patients',
     '/complaints',
     '/diagnoses',
