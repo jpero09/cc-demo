@@ -17,7 +17,7 @@
         function(data) {
           $scope.isLoading = false;
           $scope.dept = data;
-          drawVisitsChart($scope.dept);
+          drawVisitsChart();
         },
         function(error) {
           $scope.error = error;
@@ -26,14 +26,14 @@
       );
     };
 
-    function drawVisitsChart(deptData) {
-      if(!deptData || !deptData.visits || !deptData.visits.monthly) {
+    function drawVisitsChart() {
+      if(!$scope.dept || !$scope.dept.visits || !$scope.dept.visits.monthly) {
         $scope.visitsError = true;
 
         return;
       }
 
-      var data = google.visualization.arrayToDataTable(deptData.visits.monthly);
+      var data = google.visualization.arrayToDataTable($scope.dept.visits.monthly);
       var options = {
         legend: {position: 'none'},
         hAxis: {gridlines: {color: '#EEE', count: 12}},

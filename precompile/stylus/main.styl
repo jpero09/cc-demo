@@ -17,17 +17,23 @@ a
     border 0px
     background-color transparent
     color #FFFFFF
+    placeholder(color #EEEEEE,)
     border-bottom 1px solid #FFFFFF
     border-radius 0px
+    &:focus
+      border-bottom 1px solid #FFFFFF
   .input-group-addon
     border 0px
     background-color transparent
     border-bottom 1px solid #FFFFFF
+    border-radius 0px
     padding 0px
   .fa-stack-2x
     color #FFFFFF
   .fa-stack-1x
     color $main-color
+  .fa-search
+    margin-top -2px
   .navbar
     padding 0px !important
     a
@@ -52,6 +58,12 @@ a
   padding 20px
   margin 10px 0px
   box-shadow 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28)
+.ellipsed-text
+  text-overflow ellipsis
+  overflow hidden
+  white-space nowrap
+.overflow-hidden
+  overflow hidden
 
 // Summary
 .dept-card
@@ -69,7 +81,11 @@ a
       margin-right 5px
   #map
     margin 0 -11px
-    height 200px
+    height 115px
+  .border-bottom
+    border-bottom 1px solid #E6E6E6
+    margin 15px -11px
+
 .stat
   font-size 16px
   font-weight bold
@@ -85,6 +101,9 @@ a
     width 0
     display block
     float none
+.col-pad-5
+  padding-right 5px
+  padding-left 5px
 
 .rank-1
   background $main-color
