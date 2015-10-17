@@ -15,13 +15,32 @@
     $locationProvider.html5Mode(true);
 
     $stateProvider
-      .state('summary', {
+      .state('dept', {
         url: '/',
         views: {
-          card: standardCard,
+          card: {
+            templateUrl: 'department/card',
+            controller: 'cardController'
+          },
           main: {
             templateUrl: 'department/summary',
             controller: 'deptSummaryController'
+          }
+        }
+      })
+      .state('dept.notImplemented', {
+        views: {
+          'main@': {
+            templateUrl: 'department/notImplemented'
+          }
+        }
+      })
+      .state('dept.physicians', {
+        url: 'physicians',
+        views: {
+          'main@': {
+            templateUrl: 'department/physicians',
+            controller: 'deptPhysiciansController'
           }
         }
       })

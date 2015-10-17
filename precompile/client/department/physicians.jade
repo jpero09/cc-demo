@@ -1,0 +1,7 @@
+.card-columns
+  .card(data-ng-repeat='doc in physicians')
+    img.card-img-top(data-ng-src="{{doc.image}}")
+    .card-block
+      strong.card-title {{doc.lastName}}, {{doc.firstName}}, {{doc.suffix}}
+      .card-text {{doc.specialties}}
+      .card-text {{doc.phone}}

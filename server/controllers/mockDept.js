@@ -1,6 +1,8 @@
 var _ = require('lodash');
+var Chance = require('chance');
 
 var MockDeptController = function() { };
+var chance = new Chance();
 
 MockDeptController.prototype.getById = function(req, res) {
   var output = {
@@ -57,6 +59,32 @@ MockDeptController.prototype.getSummary = function(req, res) {
       ]
     }
   };
+
+  res.json(output);
+};
+
+MockDeptController.prototype.getActivity = function(req, res) {
+  var output = {id: req.params.id};
+
+  res.json(output);
+};
+
+MockDeptController.prototype.getPhysicians = function(req, res) {
+  var output = {id: req.params.id, physicians: []};
+
+  _.times(75, function(n) {
+    var gender = chance.gender();
+    var imageGender = (gender.toLowerCase() === 'female') ? 'women' : 'men';
+    output.physicians.push({id: n,
+      firstName: chance.first({gender: gender.toLowerCase()}),
+      lastName: chance.last(),
+      gender: gender,
+      suffix: 'MD',
+      specialties: 'Cardiology',
+      phone: chance.phone(),
+      image: 'http://api.randomuser.me/portraits/med/' + imageGender + '/' + n + '.jpg'
+    });
+  });
 
   res.json(output);
 };
