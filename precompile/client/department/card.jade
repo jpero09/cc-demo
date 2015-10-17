@@ -1,0 +1,30 @@
+.module.dept-card
+  h1 {{dept.label}}
+  h6.text-muted {{dept.building}}
+  .m-a
+    a.pull-left Add to Watch List
+    a.pull-right Share profile
+  .clearfix
+  .row.m-t.m-b.text-center
+    .col-sm-3.col-md-3.col-lg-3.col-pad-5(title='{{formNum(dept.visits)}} Visits')
+      .stat {{abbrNum(dept.visits)}}
+      .stat-label.text-muted.ellipsed-text Visits
+    .col-sm-3.col-md-3.col-lg-3.col-pad-5(title='{{formNum(dept.physicians)}} Physicians')
+      .stat {{abbrNum(dept.physicians)}}
+      .stat-label.text-muted.ellipsed-text Physicians
+    .col-sm-3.col-md-3.col-lg-3.col-pad-5(title='{{formNum(dept.complaints)}} Complaints')
+      .stat {{abbrNum(dept.complaints)}}
+      .stat-label.text-muted.ellipsed-text Complaints
+    .col-sm-3.col-md-3.col-lg-3.col-pad-5(title='{{formNum(dept.diagnosis)}} Diagnosis')
+      .stat {{abbrNum(dept.diagnosis)}}
+      .stat-label.text-muted.ellipsed-text Diagnosis
+  .leaflet-container.leaflet-fade-anim(id='map')
+  .m-a
+    a.pull-left
+      i.fa.fa-map-marker
+      | Go to Map
+    a.pull-right
+      i.fa.fa-share-alt
+      | Go to Constellation
+  .clearfix
+  .border-bottom

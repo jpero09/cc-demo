@@ -1,0 +1,30 @@
+div
+  .pull-right
+    select.form-control
+      option 2015
+      option 2014
+      option 2013
+  .clearfix
+  .module
+    .title Visits
+    .content.overflow-hidden
+      div(id='chrtVisits')
+      .alert.alert-danger.m-t(data-ng-show='visitsError')
+        i.fa.fa-exclamation-triangle.m-r
+        | Unable to load visit data at this time.
+  .module
+    .title.m-b Insurance
+    .content
+      .row(data-ng-repeat='ins in dept.insurance.providers | orderBy: "-coverage"')
+        .col-sm-2.col-md-2.col-lg-2.ellipsed-text
+          a {{ins.label}}
+        .col-sm-10.col-md-10.col-lg-10
+          .hBar
+            span(class='rank-{{$index + 1}}', style="width: {{ins.coverage}}%;")
+  .module
+    .title Patient Demographics
+    .content
+      div(id='chrtDemographics')
+      .alert.alert-warning.m-t
+        i.fa.fa-exclamation-triangle.m-r
+        | Patient Demographic unavailable at this time
