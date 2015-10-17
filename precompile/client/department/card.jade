@@ -1,0 +1,29 @@
+.module.dept-card
+  h1 {{dept.label}}
+  h6.text-muted {{dept.building}}
+  .m-a
+    a.pull-left Add to Watch List
+    a.pull-right Share profile
+  .clearfix
+  .row.m-t.m-b.text-center
+    .col-sm-3.col-md-3.col-lg-3
+      .stat {{formatNumber(dept.visits)}}
+      .stat-label.text-muted Visits
+    .col-sm-3.col-md-3.col-lg-3
+      .stat.text-center {{formatNumber(dept.physicians)}}
+      .stat-label.text-muted Physicians
+    .col-sm-3.col-md-3.col-lg-3
+      .stat.text-center {{formatNumber(dept.complaints)}}
+      .stat-label.text-muted Complaints
+    .col-sm-3.col-md-3.col-lg-3
+      .stat {{formatNumber(dept.diagnosis)}}
+      .stat-label.text-muted Diagnosis
+  .leaflet-container.leaflet-fade-anim(id='map')
+  .m-a
+    a.pull-left
+      i.fa.fa-map-marker
+      | Go to Map
+    a.pull-right
+      i.fa.fa-share-alt
+      | Go to Constellation
+  .clearfix

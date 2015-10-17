@@ -15,7 +15,7 @@
       "return",
       "try",
       "catch"
-    ],  
+    ],
     "disallowKeywordsOnNewLine": null,
     "requireKeywordsOnNewLine": [
       "else",
@@ -23,6 +23,7 @@
     ],
     "excludeFiles": [
       "node_modules/**",
+      "assets/vendor/**",
       "dist/**",
       "./.c9/**"
     ]
