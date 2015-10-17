@@ -10,8 +10,7 @@
   /* @ngInject */
   function deptFactory($resource) {
     return $resource('./api/dept/:id/:report', {}, {
-      Get: {method: 'GET', timeout: defaultTimeout},
-      GetSummary: {method: 'GET', timeout: defaultTimeout}
+      Get: {method: 'GET', timeout: defaultTimeout}
     });
   }
 })();

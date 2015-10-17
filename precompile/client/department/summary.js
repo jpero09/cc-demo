@@ -7,8 +7,10 @@
 
   /* @ngInject */
   function deptSummaryController($scope, $stateParams, Departments) {
+    var CURRENT_STATE = 'dept';
 
     $scope.init = function() {
+      setNavLink(CURRENT_STATE);
       $scope.isLoading = true;
       $scope.error = null;
 
@@ -45,6 +47,12 @@
 
       var chart = new google.visualization.AreaChart(document.getElementById('chrtVisits'));
       chart.draw(data, options);
+    }
+
+    // TODO: Move this someplace global
+    function setNavLink(state) {
+      $('.nav').find('.active').removeClass('active');
+      $('.nav-link[ui-sref="' + state + '"]').addClass('active');
     }
 
     $scope.init();
