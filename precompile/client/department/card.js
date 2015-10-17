@@ -34,12 +34,14 @@
       // Time to load up that map
       var map = L.map('map').setView([location.longitude, location.latitude], 13);
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+          '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © ' +
+          '<a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 15,
         id: 'jpero09.nnhog5nb',
         accessToken: 'pk.eyJ1IjoianBlcm8wOSIsImEiOiJjaWZ0djJwbmMxYzk4dXZrcXZpMTFvd2Y3In0.xkTclyrSwn1nTatCK4hogA'
-        }).addTo(map);
-      $(".leaflet-control-zoom").css("visibility", "hidden");
+      }).addTo(map);
+      $('.leaflet-control-zoom').css('visibility', 'hidden');
 
       // Lets get our icon prepped
       var customMarker = L.icon({
@@ -54,8 +56,9 @@
     var ABBR_FORMAT = '0a';
     $scope.formatNumber = function(num) {
       if(isNaN(num)) {return '--';}
+
       return numeral(num).format(ABBR_FORMAT);
-    }
+    };
 
     $scope.init();
   }
