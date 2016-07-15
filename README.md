@@ -4,6 +4,9 @@
 
 Live demo [here!](https://cc-demo1.herokuapp.com/)
 
+# Background
+This was a code test that I took. See the [wiki](https://github.com/jpero09/cc-demo/wiki) for the original requirements.
+
 # First Run
 * Bring down code:
   * `git clone git@github.com:jpero09/cc-demo.git` -OR-
